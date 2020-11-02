@@ -1,0 +1,26 @@
+<div class="reddit-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <!-- Display Posts-->
+        <app-post-tile [posts]="posts"></app-post-tile>
+        <div class="text-center">
+          <button
+            class="btn btn-primary btn-sm mb-4"
+            *ngIf="!noMoreData"
+            (click)="onLoadMore()"
+          >
+            Load More
+          </button>
+          <div class="alert alert-info" *ngIf="noMoreData">
+            No More Data Available.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <app-side-bar></app-side-bar>
+        <app-subreddit-side-bar></app-subreddit-side-bar>
+      </div>
+    </div>
+  </div>
+</div>
